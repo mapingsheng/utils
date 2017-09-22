@@ -1,4 +1,4 @@
-package com.maps.utils.date;
+package com.xes.teacherrestserver.rest.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -70,6 +70,14 @@ public class TimeUtil {
 		cal.add(Calendar.DATE, +1);
 		return cal.getTimeInMillis();
 	}
-	
-	
+	/**
+	 * 获取今天是周几 1~7
+	 * @return
+	 */
+	public static Integer getWeekOfDate(){
+		Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        int w = cal.get(Calendar.DAY_OF_WEEK) - 1;
+        return w;
+	}
 }
